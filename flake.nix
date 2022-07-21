@@ -55,10 +55,15 @@
         };
       };
 
-      defaultPackage = forAllSystems (system:
-        (import nixpkgs {
+      packages = forAllSystems (system:
+      let
+        pkgs = import nixpkgs {
           inherit system;
           overlays = [ self.overlays.default ];
-        }).node-Tor);
+        };
+      in rec {
+        inherit (pkgs) node-Tor;
+        default = node-Tor;
+      });
     };
 }
