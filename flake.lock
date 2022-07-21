@@ -15,9 +15,27 @@
         "type": "indirect"
       }
     },
+    "node-Tor-src": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1651941116,
+        "narHash": "sha256-Rplpc+sgKzG00xaNkdhOwwvzqe3KfKV3XJTDBglfkHM=",
+        "owner": "Ayms",
+        "repo": "node-Tor",
+        "rev": "7429c58008e974ff71909251f713fb1a01f74976",
+        "type": "github"
+      },
+      "original": {
+        "owner": "Ayms",
+        "ref": "master",
+        "repo": "node-Tor",
+        "type": "github"
+      }
+    },
     "root": {
       "inputs": {
-        "nixpkgs": "nixpkgs"
+        "nixpkgs": "nixpkgs",
+        "node-Tor-src": "node-Tor-src"
       }
     }
   },
