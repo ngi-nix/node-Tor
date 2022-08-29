@@ -34,11 +34,12 @@
             cd ..
           '';
           installPhase = ''
-            # lib/node
-            mkdir -p $out/lib/node
-            cp -r lib/* $out/lib/node
-            mv $out/lib/node/node-tor.js $out/lib/node/node-Tor.js
-            cat > $out/lib/node/package.json << EOF
+            # lib/node_modules
+            mkdir -p $out/lib/node_modules/node-Tor
+            cp -r lib/* $out/lib/node_modules/node-Tor
+            mv $out/lib/node_modules/node-Tor/node-tor.js \
+               $out/lib/node_modules/node-Tor/node-Tor.js
+            cat > $out/lib/node_modules/node-Tor/package.json << EOF
             {
               "name": "${pname}",
               "version": "${version}",
